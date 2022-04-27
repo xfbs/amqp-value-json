@@ -3,6 +3,9 @@ name = "amqp-value-json"
 version = "0.1.0"
 edition = "2021"
 authors = ["Patrick Elsen <pelsen@xfbs.net>"]
+repository = "https://github.com/amqp-value-json"
+license = "MIT"
+description = "Crate to convert between AMQP and JSON values"
 
 [dependencies]
 amq-protocol-types = "7.0.1"
