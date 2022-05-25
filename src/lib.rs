@@ -101,8 +101,8 @@ impl ToAmqp for Value {
             Bool(val) => AMQPValue::Boolean(*val),
             Null => AMQPValue::Void,
             Number(val) => match (val.as_f64(), val.as_i64(), val.as_u64()) {
-                (Some(double), _, _) => AMQPValue::Double(double),
                 (_, Some(signed), _) => AMQPValue::LongLongInt(signed),
+                (Some(double), _, _) => AMQPValue::Double(double),
                 (_, _, Some(unsigned)) => AMQPValue::Timestamp(unsigned),
                 _ => Err(ToAmqpError::NumberError)?,
             },
